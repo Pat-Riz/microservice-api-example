@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlatformService", "PlatformService\PlatformService.csproj", "{E013AE56-F016-45BD-B82A-9D165EE3E813}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes", "Kubernetes", "{39FB8B4F-C236-44FF-BE29-EB1E4E06A0B5}"
+	ProjectSection(SolutionItems) = preProject
+		commands-depl.yaml = commands-depl.yaml
+		ingress-srv.yaml = ingress-srv.yaml
+		local-pvc.yaml = local-pvc.yaml
+		mssql-plat-deply.yaml = mssql-plat-deply.yaml
+		platforms-depl.yaml = platforms-depl.yaml
+		platforms-np-srv.yaml = platforms-np-srv.yaml
+		rabbitmq-depl.yaml = rabbitmq-depl.yaml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandsService", "CommandsService\CommandsService.csproj", "{1933371D-BA91-4F1E-9BCA-6E9C08EF4008}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0B15A72F-D71D-4983-B0C9-191705365B73}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E013AE56-F016-45BD-B82A-9D165EE3E813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E013AE56-F016-45BD-B82A-9D165EE3E813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E013AE56-F016-45BD-B82A-9D165EE3E813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E013AE56-F016-45BD-B82A-9D165EE3E813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1933371D-BA91-4F1E-9BCA-6E9C08EF4008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1933371D-BA91-4F1E-9BCA-6E9C08EF4008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1933371D-BA91-4F1E-9BCA-6E9C08EF4008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1933371D-BA91-4F1E-9BCA-6E9C08EF4008}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E679B4B2-8757-45B7-AF20-A40096205498}
+	EndGlobalSection
+EndGlobal
