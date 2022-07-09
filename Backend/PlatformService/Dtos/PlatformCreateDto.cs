@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PlatformService.Dtos
 {
-    public class PlatformCreateDto
+    public record PlatformCreateDto
     {
         [Required]
         public string Name { get; set; }

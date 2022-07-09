@@ -3,8 +3,8 @@
 
 namespace CommandsService.Dtos
 {
-    public class GenericEventDto
+    public record GenericEventDto
     {
-        public string Event { get; set; }
+        public string Event { get; set; } = null!;
     }
 }

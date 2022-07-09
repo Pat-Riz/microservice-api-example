@@ -18,7 +18,7 @@ namespace CommandsService.SyndDataServices.Grpc
             _config = config;
             _mapper = mapper;
         }
-        public IEnumerable<Platform>? GetAllPlatforms()
+        public IEnumerable<Platform> GetAllPlatforms()
         {
             var grpcAddress = _config["GrpcPlatform"];
             Console.WriteLine($"--> Calling gRPC Service {grpcAddress}");
@@ -35,7 +35,7 @@ namespace CommandsService.SyndDataServices.Grpc
             {
 
                 Console.WriteLine($"Failed talking to gRPC platform service: {ex.Message}");
-                return null;
+                return new List<Platform>();
             }
         }
     }

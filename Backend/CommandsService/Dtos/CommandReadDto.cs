@@ -4,7 +4,7 @@
 
 namespace CommandsService.Dtos
 {
-    public class CommandReadDto
+    public record CommandReadDto
     {
         public int Id { get; set; }
 

@@ -23,6 +23,15 @@ builder.Services.AddSingleton<IEventProcessor, EventProcessor>();
 builder.Services.AddScoped<IPlatformDataClient, PlatformDataClient>();
 builder.Services.AddHostedService<MessageBusSubscriber>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,13 +43,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors();
 
-if (app.Environment.IsProduction())
-{
-    //TODO: grpcClient.GetAllPlatforms(); don't work locally? Fail to connect to grpcServer
-    PrepareDb.PrepPopulation(app);
-}
-
+PrepareDb.PrepPopulation(app, app.Environment.IsProduction());
 
 app.MapGet("/c/platforms", (ICommandRepo repo, IMapper mapper) =>
 {

@@ -36,13 +36,23 @@ namespace PlatformService.Data
 
             if (!context.Platforms.Any())
             {
-                Console.WriteLine("--> Seeding data...");
-                context.Platforms.AddRange(
-                    new Platform() { Name = "Dot net", Publisher = "Microsoft", Cost = "Free" },
-                    new Platform() { Name = "SQL Server Express", Publisher = "Microsoft", Cost = "Free" },
-                    new Platform() { Name = "Kubernetes", Publisher = "Cloud Native Computing Foundation", Cost = "Free" }
-                   );
-                context.SaveChanges();
+                try
+                {
+                    Console.WriteLine("--> Seeding default data...");
+                    context.Platforms.AddRange(
+                        new Platform() { Name = "Docker", Publisher = "Microsoft", Cost = "Free" },
+                        new Platform() { Name = "Git", Publisher = "Gitsoft", Cost = "Free" },
+                        new Platform() { Name = "Kubernetes", Publisher = "Cloud Native Computing Foundation", Cost = "Free" }
+                       );
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine($"--->ERROR {ex.Message}");
+                }
+
+
             }
             else
             {

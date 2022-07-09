@@ -3,10 +3,10 @@
 
 namespace CommandsService.Dtos
 {
-    public class CommandCreateDto
+    public record CommandCreateDto
     {
-        public string HowTo { get; set; }
+        public string HowTo { get; init; } = null!;
 
-        public string CommandLine { get; set; }
+        public string CommandLine { get; init; } = null!;
     }
 }

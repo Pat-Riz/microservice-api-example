@@ -16,6 +16,7 @@ namespace PlatformService.AsyncDataServices
 
         public MessageBusClient(IConfiguration config)
         {
+            Console.WriteLine("--> Creating messagebus");
             var factory = new ConnectionFactory()
             {
                 HostName = config["RabbitMQHost"],
